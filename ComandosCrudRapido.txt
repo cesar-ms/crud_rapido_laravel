@@ -1,0 +1,54 @@
+-create new crud_rapido
+
+Crea un modelo producto
+-php artisan make:model Product -m 
+
+Cuando se crea el modelo debemos cambiar 
+los campos que va a tener la tabla, en este 
+caso es producto.
+
+Despues hacemos la migracion de la base de datos.
+
+-php artisan migrate
+
+Despues revisamo que la migracion se creo correctamente
+
+luego corremos el comando para usar el generador del 
+crud. 
+
+-composer require ibex/crud-generator --dev
+
+Luego ejecutamos este comando para agregarlo en el vendor
+-php artisan vendor:publish --tag=crud 
+
+Con el siguiente comando creamos, los modelos
+las vistas, y los controladores.
+
+-php artisan make:crud products
+
+Despues de eso creamos una ruta en la carpeta route
+
+en WEB. para poder acceder a los metodos.
+
+Route::resource('products', ProductController::class);
+
+Instalamos el paquete laravel UI
+-composer require laravel/ui
+
+Despues ejecutamos
+-php artisan ui bootstrap
+
+y lugo
+-php artisan ui bootstrap --auth
+
+luego ejecutamos 
+-npm install && npm run dev
+
+en otra terminal ejecutamos 
+
+php artisan serve
+
+con esto terminamos con el crud.
+
+
+
